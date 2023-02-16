@@ -1,0 +1,76 @@
+Parte superiore + ampia DONE
+	- possibilità di avere un toggle che la nasconda (Super+a) DONE
+Colorscheme Palenight DONE
+Tutti i widget sono rappresentati con dei cerchietti
+	- Pallini per gli schermi DONE
+	- Tasklist DONE
+	- tonalità + chiara della barra DONE
+
+A sinistra dei pallini per gli schermi, tre pallini:
+	a) Rosso:	chiude la finestra
+	b) Giallo:	minimizza
+	b) Verde:	massimizza
+
+Scripts:
+	- Impostazioni tema (mouse, icone)
+		- lxappearence
+	- controllo del volume
+	- temperatura CPU
+
+	- rofi
+		- wifi
+			- Comunicazione con `iwctl` tramite dbus
+		- dispositivi rimuovibili
+
+A destra dell'orologio pallino con luna (shutup):
+	- Scorciatoia: Super+Shift+s
+	- Alert con countdown, tasto di spegnimento e annulla
+		- Implementare con rofi
+
+Prompt di ricerca centrale (stile MacOS)
+	- Implementare con rofi DONE
+		- Bordi arrotondati
+		- Colorscheme
+
+Notifiche:
+	- Centro notifiche
+	- Colorscheme DONE
+
+Login manager:
+	- Colorscheme
+	- Riquadri con bordi arrotondati
+	- Logo per il tema
+
+Creare renderer in c++ per grafiche (in particolare frattali)
+
+Bugs:
+	- Dopo lo screenshot l'autofocus non funziona
+	- st non ha icona
+		- Sistemare desktop file
+	- Se si apre "urgent" su un altro desktop, il colore del font deve cambiare,
+	  non il background!
+		- Aprire firefox su 1
+		- Eseguire `open https://google.com` su 2
+
+Links:
+	- https://github.com/Strazil001/Dotfiles-AwesomeWM
+	- https://github.com/davatorium/rofi
+	- https://github.com/boostorg/gil
+
+Color 	Default 	Lighter
+Black 	#292d3e 	#434758
+Red 	#f07178 	#ff8b92
+Green 	#c3e88d 	#ddffa7
+Yellow 	#ffcb6b 	#ffe585
+Blue 	#82aaff 	#9cc4ff
+Magenta #c792ea 	#e1acff
+Cyan 	#89ddff 	#a3f7ff
+White 	#d0d0d0 	#ffffff
+
+OLD 11121D
+
+DEFAULT BLACK per sfondo
+LIGHTER BLACK per systray inattivo
+DEFAULT BLUE per systray attivo
+DEFAULT RED per urgent
+
