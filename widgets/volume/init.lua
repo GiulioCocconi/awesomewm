@@ -23,7 +23,7 @@ M.w = wibox.widget {
 		id = "textbox",
 		align = "center",
 		valign = "center",
-		forced_width = 30,
+		forced_width = 35,
 		widget = wibox.widget.textbox
 	}
 }

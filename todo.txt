@@ -14,7 +14,7 @@ A sinistra dei pallini per gli schermi, tre pallini:
 Scripts:
 	- Impostazioni tema (mouse, icone)
 		- lxappearence
-	- controllo del volume
+	- controllo del volume DONE
 	- temperatura CPU
 
 	- rofi
@@ -23,11 +23,11 @@ Scripts:
 		- dispositivi rimuovibili
 
 A destra dell'orologio pallino con luna (shutup):
-	- Scorciatoia: Super+Shift+s
+	- Scorciatoia: Super+Shift+p
 	- Alert con countdown, tasto di spegnimento e annulla
 		- Implementare con rofi
 
-Prompt di ricerca centrale (stile MacOS)
+Prompt di ricerca centrale
 	- Implementare con rofi DONE
 		- Bordi arrotondati
 		- Colorscheme
@@ -41,7 +41,7 @@ Login manager:
 	- Riquadri con bordi arrotondati
 	- Logo per il tema
 
-Creare renderer in c++ per grafiche (in particolare frattali)
+Creare renderer in C++ per grafiche (in particolare frattali)
 
 Bugs:
 	- Dopo lo screenshot l'autofocus non funziona
@@ -51,11 +51,11 @@ Bugs:
 	  non il background!
 		- Aprire firefox su 1
 		- Eseguire `open https://google.com` su 2
+	- Le icone delle notifiche devono avere un limite di dimensione
 
 Links:
 	- https://github.com/Strazil001/Dotfiles-AwesomeWM
 	- https://github.com/davatorium/rofi
-	- https://github.com/boostorg/gil
 
 Color 	Default 	Lighter
 Black 	#292d3e 	#434758
