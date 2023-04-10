@@ -32,7 +32,7 @@ function M.debug(msg)
 	end
 end
 
-function get_cmd_name(cmd)
+function M.get_cmd_name(cmd)
 	local findme = cmd
 	local firstspace = cmd:find(' ')
 
@@ -44,7 +44,8 @@ function get_cmd_name(cmd)
 end
 
 function run_once(cmd)
-	cmd_name = get_cmd_name(cmd)
+	cmd_name = M.get_cmd_name(cmd)
+	M.debug("Running " .. cmd_name)
 	awful.spawn.with_shell(string.format('pgrep -u $USER -x %s > /dev/null || (%s)',
 		cmd_name, cmd))
 end
@@ -67,7 +68,7 @@ end
 
 function M.is_command_installed(cmd)
 	if cmd == "default" then return true end
-	local test_cmd = os.execute("command -v " .. get_cmd_name(cmd))
+	local test_cmd = os.execute("command -v " .. M.get_cmd_name(cmd))
 	return test_cmd ~= nil
 end
 
@@ -85,7 +86,7 @@ function M.init()
 
 	for _, c in ipairs(required_commands()) do
 		if not M.is_command_installed(c.cmd) then
-			local msg = string.format("%s (%s) is required for your config to work, please install it", get_cmd_name(c.cmd), c.name)
+			local msg = string.format("%s (%s) is required for your config to work, please install it", M.get_cmd_name(c.cmd), c.name)
 
 			naughty.notify({ preset = naughty.config.presets.critical,
 			title	= "Required program is missing!",
@@ -114,9 +115,13 @@ function M.init()
 
 end
 
-function M.get_theme_file()
+function M.get_theme_dir()
 	local theme_name = config.theme or "default"
-	return M.themes_path .. theme_name .. "/theme.lua"
+	return M.themes_path .. theme_name
+end
+
+function M.get_theme_file()
+	return M.get_theme_dir() .. "/theme.lua"
 end
 
 return M

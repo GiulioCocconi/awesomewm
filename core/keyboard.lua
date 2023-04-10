@@ -3,10 +3,10 @@ local awful			= require("awful")
 local menubar		= require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local utils			= require("core.utils")
+local ui			= require("core.ui")
 local cmds			= require("core.config").cmds
 local modkey		= require("core.config").modkey
 local volume		= require("widgets.volume")
-
 local M = {}
 
 M.globalkeys = gears.table.join(
@@ -39,7 +39,7 @@ M.globalkeys = gears.table.join(
 	awful.key({modkey}, "h", function() awful.tag.incmwfact(-0.05) end,
 		{description = "decrease master width"}),
 
-	awful.key({modkey}, "a", function() awful.screen.focused().wibox.toggle_autohide() end,
+	awful.key({modkey}, "a", awful.screen.focused().wibox.toggle_autohide,
 		{description = "toggle wibox"}),
 
 	awful.key({modkey}, "F11", volume.increase, {description = "increase the volume"}),
@@ -70,6 +70,18 @@ M.clientkeys = gears.table.join(
 )
 
 function M.init()
+	if ui.has_rofi_config() then
+		for key, cmd in pairs(cmds) do
+			local cmd_name = utils.get_cmd_name(cmd)
+			if cmd_name == "rofi" then
+				cmds[key] = cmd .. " -config " .. ui.rofi_config
+				utils.debug("Using " .. cmd)
+			end
+		end
+	else
+		utils.debug("This theme has got no rofi config!")
+	end
+
 	for i = 1, 9 do
 		M.globalkeys = gears.table.join(M.globalkeys,
         awful.key({ modkey }, "#" .. i + 9,

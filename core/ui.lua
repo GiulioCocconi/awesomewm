@@ -9,6 +9,8 @@ local dpi = require("beautiful.xresources").apply_dpi
 
 local M = {}
 
+M.rofi_config = utils.get_theme_dir() .. "/config.rasi"
+
 function init_layout_list(use_default, custom)
 	local default = {
 		awful.layout.suit.tile,
@@ -30,6 +32,10 @@ function init_layout_list(use_default, custom)
 	}
 	if use_default then awful.layout.layouts = default
 	else awful.layout.layouts = custom end
+end
+
+function M.has_rofi_config()
+	return gears.filesystem.file_readable(M.rofi_config)
 end
 
 function set_wallpaper(s)
@@ -222,7 +228,6 @@ end
 
 function M.init()
 	beautiful.init(utils.get_theme_file())
-	utils.debug(beautiful.font)
 	init_layout_list(config.use_default_layout_list, config.layout_list)
 
 	-- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
