@@ -16,6 +16,8 @@ Scripts:
 		- lxappearence
 	- controllo del volume DONE
 	- temperatura CPU
+	- Livello batteria
+		- Controllare prima se alimentato da batteria!
 
 	- rofi
 		- wifi
@@ -24,7 +26,7 @@ Scripts:
 
 A destra dell'orologio pallino con luna (shutup):
 	- Scorciatoia: Super+Shift+p
-	- Alert con countdown, tasto di spegnimento e annulla
+	- Alert con countdown, tasto di spegnimento, riavvio e annulla
 		- Implementare con rofi
 
 Prompt di ricerca centrale
