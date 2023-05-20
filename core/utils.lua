@@ -43,24 +43,23 @@ function M.get_cmd_name(cmd)
 	return findme
 end
 
-function run_once(cmd)
-	cmd_name = M.get_cmd_name(cmd)
+local function run_once(cmd)
+	local cmd_name = M.get_cmd_name(cmd)
 	M.debug("Running " .. cmd_name)
-	awful.spawn.with_shell(string.format('pgrep -u $USER -x %s > /dev/null || (%s)',
-		cmd_name, cmd))
+	awful.spawn.once(cmd);
 end
 
-function required_commands()
-	req_cmds = {}
+local function required_commands()
+	local req_cmds = {}
 
 	for i, c in ipairs(config.autoload) do
-		cmd_table = { name = "autoload cmd " .. tostring(i), cmd = c}
+		local cmd_table = { name = "autoload cmd " .. tostring(i), cmd = c}
 		table.insert(req_cmds, cmd_table)
 	end
 
 	for k, c in pairs(config.cmds) do
 		if c == "default" then M.debug(k .. " set as default") end
-		cmd_table = { name = k .. " cmd", cmd = c}
+		local cmd_table = { name = k .. " cmd", cmd = c}
 		table.insert(req_cmds, cmd_table)
 	end
 	return req_cmds
@@ -81,12 +80,12 @@ end
 
 
 function M.init()
-	local msg = "Awesome started using " .. M.config_path .. "config";
-	M.debug(msg)
+	M.debug("Awesome started using " .. M.config_path .. "config")
 
 	for _, c in ipairs(required_commands()) do
 		if not M.is_command_installed(c.cmd) then
-			local msg = string.format("%s (%s) is required for your config to work, please install it", M.get_cmd_name(c.cmd), c.name)
+			local msg = string.format("%s (%s) is required for your config to work, please install it",
+				M.get_cmd_name(c.cmd), c.name)
 
 			naughty.notify({ preset = naughty.config.presets.critical,
 			title	= "Required program is missing!",
