@@ -1,7 +1,9 @@
 local naughty		= require("naughty")
-local awful			= require("awful")
-local gears			= require("gears")
+local awful		= require("awful")
+local gears		= require("gears")
 local config		= require("core.config")
+
+if utf8 == nil then utf8 = require("lua-utf8") end
 
 local M = {}
 
@@ -14,9 +16,9 @@ local debug_file = M.config_path .. "debug"
 M.icons = {
 	full_dot	   = utf8.char(61713),
 	empty_dot	   = utf8.char(61708),
-	dot_inside_dot = utf8.char(61842),
+	dot_inside_dot 	   = utf8.char(61842),
 	volume_low	   = utf8.char(984447),
-	volume_medium  = utf8.char(984448),
+	volume_medium      = utf8.char(984448),
 	volume_high	   = utf8.char(984446),
 	volume_mute	   = utf8.char(984927),
 	sleep		   = 'X',

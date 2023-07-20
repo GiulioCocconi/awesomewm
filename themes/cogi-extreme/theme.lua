@@ -9,8 +9,8 @@ utils.debug(theme_path)
 
 local theme = {}
 
-theme.font          = "FiraCode Nerd Font 10"
-theme.widgets_font  = "FiraCode Nerd Font 13"
+theme.font          = "Iosevka Nerd Font 12"
+theme.widgets_font  = "Iosevka Nerd Font 15"
 
 theme.default_black = "#292d3e"
 theme.default_blue  = "#82aaff"

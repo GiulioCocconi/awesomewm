@@ -5,9 +5,9 @@ M.cmds = {
 	terminal   = "st",
 	editor	   = os.getenv("EDITOR") or "nano",
 	screenshot = "flameshot gui",
-	browser	   = "firefox",
+	browser	   = "chromium",
 	calc	   = "rofi -show calc -modi calc -no-show-match -no-sort",
-	run		   = "rofi -show run",
+	run        = "rofi -show run",
 }
 
 M.autoload = {
