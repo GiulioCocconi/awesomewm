@@ -1,6 +1,6 @@
 configuration {
   drun-display-format: "Run: ";
-  font: "FiraCode Nerd Font 11";
+  font: "Iosevka Nerd Font 11";
 }
 
 @theme "/dev/null"
