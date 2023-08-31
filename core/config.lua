@@ -2,7 +2,7 @@ local awful = require("awful")
 local M = {}
 
 M.cmds = {
-	terminal   = "st",
+	terminal   = os.getenv("TERMINAL") or st,
 	editor	   = os.getenv("EDITOR") or "nano",
 	screenshot = "flameshot gui",
 	browser	   = "chromium",
