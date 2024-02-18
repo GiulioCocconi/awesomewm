@@ -7,7 +7,7 @@ if [[ `command -v pamixer` == '' ]]; then
 fi
 
 if [[ $1 == '+' ]]; then
-	pamixer -i 5
+	pamixer -ui 5
 elif [[ $1 == "-" ]]; then
 	pamixer -d 5
 elif [[ $1 == "m" ]]; then
