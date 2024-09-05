@@ -63,12 +63,9 @@ end
 
 function M.increase() run("+")			  end
 function M.decrease() run("-")			  end
-function M.mute()	  run("m")			  end
-function M.set(perc)  run(tostring(perc)) end
-
-
-run("s")
-
+function M.mute()     run("m")			  end
+function M.set(perc)  run(tostring(perc)) 	  end
+function M.init()     run("s")                    end
 
 return M
 

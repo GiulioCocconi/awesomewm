@@ -1,5 +1,4 @@
 #!/bin/sh
-CMD_STATUS="pamixer --get-volume-human"
 
 if [[ `command -v pamixer` == '' ]]; then
 	notify-send "Please install pamixer!!"
@@ -20,4 +19,4 @@ elif [[ $1 != "s" ]]; then
 	exit 1
 fi
 
-echo $($CMD_STATUS)
+echo $(pamixer --get-volume-human)
