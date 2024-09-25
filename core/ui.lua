@@ -232,6 +232,7 @@ function M.init()
 
 	-- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 	screen.connect_signal("property::geometry", set_wallpaper)
+	awful.screen.set_auto_dpi_enabled(true)
 	awful.screen.connect_for_each_screen(function(s)
 		set_wallpaper(s)
 		awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
