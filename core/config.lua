@@ -11,7 +11,7 @@ M.cmds = {
 }
 
 M.autoload = {
-	"picom",
+	"picom --backend glx",
 	"udiskie",
 }
 
