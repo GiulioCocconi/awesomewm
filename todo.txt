@@ -1,6 +1,8 @@
 Parte superiore + ampia DONE
 	- possibilità di avere un toggle che la nasconda (Super+a) DONE
+	
 Colorscheme Palenight DONE
+
 Tutti i widget sono rappresentati con dei cerchietti
 	- Pallini per gli schermi DONE
 	- Tasklist DONE
@@ -22,12 +24,11 @@ Scripts:
 	- rofi
 		- wifi
 			- Comunicazione con `iwctl` tramite dbus
-		- dispositivi rimuovibili
+		- Rimozione sicura
 
 A destra dell'orologio pallino con luna (shutup):
 	- Scorciatoia: Super+Shift+p
-	- Alert con countdown, tasto di spegnimento, riavvio e annulla
-		- Implementare con rofi
+	- Alert con countdown, tasto di spegnimento, riavvio e annulla (implementare con rofi)
 
 Prompt di ricerca centrale
 	- Implementare con rofi DONE
@@ -44,6 +45,11 @@ Login manager:
 	- Logo per il tema
 
 Creare renderer in C++ per grafiche (in particolare frattali)
+       - Generazione runtime???
+
+Aggiungere parti specifiche per host NixOS:
+	- Luminosità tastiera / schermo / grafiche varie (logo thinkpad...)
+	- Configurazioni xrandr (autorandr)
 
 Bugs:
 	- Dopo lo screenshot l'autofocus non funziona
@@ -69,7 +75,7 @@ Magenta #c792ea 	#e1acff
 Cyan 	#89ddff 	#a3f7ff
 White 	#d0d0d0 	#ffffff
 
-OLD 11121D
+OLD     #11121D
 
 DEFAULT BLACK per sfondo
 LIGHTER BLACK per systray inattivo
